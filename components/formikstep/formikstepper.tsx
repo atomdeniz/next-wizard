@@ -7,7 +7,7 @@ import {
   Stepper,
 } from "@material-ui/core";
 import React, { useState } from "react";
-import FormikStepProps from "../../interfaces/formikstep/formikstepprops";
+import FormikStepInterface from "../../interfaces/formikstep/formikstepinterface";
 import { Form, Formik, FormikConfig, FormikValues } from "formik";
 
 export default function FormikStepper({
@@ -16,7 +16,7 @@ export default function FormikStepper({
 }: FormikConfig<FormikValues>) {
   const childrenArray = React.Children.toArray(
     children
-  ) as React.ReactElement<FormikStepProps>[];
+  ) as React.ReactElement<FormikStepInterface>[];
   const [step, setStep] = useState(0);
   const currentChild = childrenArray[step];
   const [completed, setCompleted] = useState(false);

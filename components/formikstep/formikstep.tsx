@@ -1,5 +1,5 @@
-import FormikStepProps from "../../interfaces/formikstep/formikstepprops";
+import FormikStepInterface from "../../interfaces/formikstep/formikstepinterface";
 
-export default function FormikStep({ children }: FormikStepProps) {
+export default function FormikStep({ children }: FormikStepInterface) {
   return <>{children}</>;
 }
