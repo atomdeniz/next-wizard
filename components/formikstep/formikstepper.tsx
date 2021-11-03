@@ -45,11 +45,11 @@ export default function FormikStepper({
             <WrapperProgressBarUl>
               {childrenArray.map((child, index) =>
                 step > index - 1 || completed ? (
-                  <WrapperProgressBarLiActive>
+                  <WrapperProgressBarLiActive key={child.props.label}>
                     {child.props.label}
                   </WrapperProgressBarLiActive>
                 ) : (
-                  <WrapperProgressBarLi>
+                  <WrapperProgressBarLi key={child.props.label}>
                     {child.props.label}
                   </WrapperProgressBarLi>
                 )
