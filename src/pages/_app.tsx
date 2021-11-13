@@ -6,7 +6,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <React.Fragment>
       <Head>
-        <title>Hogwarts Büyücülük Okuluna Kayıt Formu</title>
+        <title>Hogwarts Büyücülük Okuluna Kayıt</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
