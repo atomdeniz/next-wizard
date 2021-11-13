@@ -1,5 +1,5 @@
-import { ErrorMessage, Field } from "formik";
-import React, { useState } from "react";
+import { ErrorMessage } from "formik";
+import React from "react";
 import { object } from "yup";
 import * as Yup from "yup";
 import FormikStep from "../components/formikstep/formikstep";
@@ -10,7 +10,7 @@ import {
   CenterDiv,
 } from "../styled-components/Wizard";
 
-const sleep = (time: any) => new Promise((acc) => setTimeout(acc, time));
+const sleep = (time: number) => new Promise((acc) => setTimeout(acc, time));
 
 export default function Home() {
   return (

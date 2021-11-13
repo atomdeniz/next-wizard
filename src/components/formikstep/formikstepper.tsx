@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import FormikStepInterface from "../../interfaces/formikstep/formikstepinterface";
-import { Form, Formik, FormikConfig, FormikValues } from "formik";
+import { Formik, FormikConfig, FormikValues } from "formik";
 import { FormButton, FormikForm } from "../../styled-components/Wizard";
 import {
   WrapperProgressBar,
@@ -27,7 +27,7 @@ export default function FormikStepper({
   return (
     <Formik
       {...props}
-      validationSchema={currentChild.props.validationSchema}
+      validationSchema={currentChild.props.validationSchema as object}
       onSubmit={async (values, helpers) => {
         if (isLastStep()) {
           await props.onSubmit(values, helpers);

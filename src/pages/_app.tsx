@@ -12,7 +12,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
       </Head>
-      <Component  {...pageProps} />
+      <Component {...pageProps} />
     </React.Fragment>
   );
 }
