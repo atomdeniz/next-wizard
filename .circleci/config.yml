@@ -26,7 +26,6 @@ jobs:
       - node/install-packages:
           # If you are using yarn, change the line below from "npm" to "yarn"
           pkg-manager: npm
-      - run: npm ci
       - run: npm run lint
       - run: npm run test:ci
       - run: npm run build
