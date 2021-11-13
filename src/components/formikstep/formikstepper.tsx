@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import FormikStepInterface from "../../interfaces/formikstep/formikstepinterface";
-import { Formik, FormikConfig, FormikValues } from "formik";
+import { Formik, FormikConfig } from "formik";
 import { FormButton, FormikForm } from "../../styled-components/Wizard";
 import {
   WrapperProgressBar,
@@ -9,10 +9,10 @@ import {
   WrapperProgressBarUl,
 } from "../../styled-components/Stepper";
 
-export default function FormikStepper({
+export default function FormikStepper<MyFormValues>({
   children,
   ...props
-}: FormikConfig<FormikValues>) {
+}: FormikConfig<MyFormValues>) {
   const childrenArray = React.Children.toArray(
     children
   ) as React.ReactElement<FormikStepInterface>[];
@@ -25,14 +25,13 @@ export default function FormikStepper({
   }
 
   return (
-    <Formik
+    <Formik<MyFormValues>
       {...props}
       validationSchema={currentChild.props.validationSchema as object}
       onSubmit={async (values, helpers) => {
         if (isLastStep()) {
           await props.onSubmit(values, helpers);
           setCompleted(true);
-          alert(JSON.stringify(values));
         } else {
           setStep((s) => s + 1);
           helpers.setTouched({});
